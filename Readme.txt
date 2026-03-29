@@ -1,11 +1,58 @@
-Behavior
-insert should insert a new element to a leaf node.  The valid set of keys is all integers in the range [1,99]. If the new element would be a duplicate of a non-deleted element already in the tree, then insert should do nothing.  However, if the new element is not a duplicate of a non-deleted element, but is a duplicate of a deleted element, then insert should “undelete” the deleted element in-place rather than physically inserting a new copy of the element.  The return value of insert should indicate whether insert logically (as opposed to physically) inserted a new element.
-delete should not physically remove an element from the tree.  Rather, it should mark the specified element as logically deleted.  If the specified element is not in the tree or is already marked as deleted, then delete should do nothing.  The return value of delete should indicate whether delete logically deleted an element.
-findMin should return the value of the minimum non-deleted element, or -1 if none exists.
-findMax should return the value of the maximum non-deleted element, or -1 if none exists.
-contains should return whether the given element both exists in the tree and is non-deleted.
-toString should perform an pre-order traversal of the tree and print the value of each element, including elements marked as deleted.  However, elements that are marked as deleted should be preceded by a single asterisk.  Every pair of adjacent elements should be separated by whitespace in the printing, but no whitespace should occur between an asterisk and the element with which it is associated.  Leading and trailing whitespace is tolerable, but it will be ignored.  (no additional messages should be printed, either)  An example of the output is as follows:
-45 30 2 *5 47 50 *60
-height should return the height of the tree, including “deleted” elements.
-size should return the count of elements in the tree, including “deleted” ones.
-The valid set of keys is all integers in the range [1,99].  Every method that accepts a key argument should throw an IllegalArgumentException with an appropriate message iff the argument is invalid.  No method specified herein should (intentionally) throw any other exception.
+Name: Lance Do
+NETID: LCD230002
+UTDID: 2021694953
+
+Main Class: Test
+Assignment: Project 2 - Binary Search Trees with Lazy Deletion
+Chosen IDE: I chose the IntelliJ IDE since it's
+
+JAVA version: java 20.0.1 2023-04-18
+             Java(TM) SE Runtime Environment (build 20.0.1+9-29)
+             Java HotSpot(TM) 64-Bit Server VM (build 20.0.1+9-29, mixed mode, sharing)
+
+Compilation Command: javac LazyBinarySearchTree.java Test.java
+Execution Command: java Test input.txt output.txt
+
+Sample input.txt:
+
+Insert:45
+Insert:30
+Insert:60
+Insert:20
+PrintTree
+Delete:30
+Contains:30
+FindMin
+FindMax
+PrintTree
+Insert:30
+PrintTree
+Height
+Size
+Insert:132
+Insert:0
+Insert
+hih
+PrintTree
+
+output.txt:
+
+True
+True
+True
+True
+45 30 20 60
+True
+False
+20
+60
+45 *30 20 60
+True
+45 30 20 60
+2
+4
+Error in insert: IllegalArgumentException raised
+Error in insert: IllegalArgumentException raised
+Error in Line: Insert
+Error in Line: hih
+45 30 20 60

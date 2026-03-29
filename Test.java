@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Test {
     public static void main(String[] args) {
         if (args.length < 2) {
-            Systnem.out.println("Need to run program with two arguments");
+            System.out.println("Need to run program with two arguments");
             return;
         }
 
@@ -12,7 +12,7 @@ public class Test {
         String outputFileName = args[1];
         LazyBinarySearchTree tree = new LazyBinarySearchTree();
 
-        try (Scanner input = new Scanner(new File(inputFileNmae));
+        try (Scanner input = new Scanner(new File(inputFileName));
              PrintWriter output = new PrintWriter(new FileWriter(outputFileName))) {
             while (input.hasNextLine()) {
                 String line = input.nextLine().trim();
@@ -34,7 +34,7 @@ public class Test {
                         try {
                             value = Integer.parseInt(parts[1]);
                         } catch (NumberFormatException e) {
-                            output.println("Error in line: " + line);
+                            output.println("Error in Line: " + line);
                             continue;
                         }
 
@@ -64,10 +64,10 @@ public class Test {
                     }
                 } catch (IllegalArgumentException e) {
                     String command = line.split(":")[0].toLowerCase();
-                    output.println("Error in " + command + ": IllegalArgumentException raised")
+                    output.println("Error in " + command + ": IllegalArgumentException raised");
                 }
             }
-        } catch (IOEception e) {
+        } catch (IOException e) {
             System.out.println("File Error: " + e.getMessage());
         }
     }
